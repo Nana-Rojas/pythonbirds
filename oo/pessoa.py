@@ -1,2 +1,2 @@
 class Pessoa:
-    nome = 'nana'
+    nome = 'Nana Rojas'
