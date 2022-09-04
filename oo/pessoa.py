@@ -8,7 +8,13 @@ class Pessoa:
     def cumprimentar(self):
         return f'Olá{id(self)}'
 
+    @staticmethod
+    def metodo_estatistico():
+        return 42
 
+    @classmethod
+    def nome_eatributo_de_classe(cls):
+        return f'{cls} - olhos {cls.olhos}'
 if __name__ == '__main__':
     Bafudinha = Pessoa(nome='Bafudinha')
     Nana = Pessoa(Bafudinha, nome='Nana')
@@ -29,3 +35,5 @@ if __name__ == '__main__':
     print(Pessoa.olhos)
     print(Nana.olhos)
     print(Bafudinha.olhos)
+    print(Pessoa.metodo_estatistico(), Nana.metodo_estatistico())
+    print(Pessoa.nome_eatributo_de_classe(), Bafudinha.nome_eatributo_de_classe())
