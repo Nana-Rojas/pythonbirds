@@ -37,7 +37,6 @@ class Direcao:
         else:
             self.sentido = self.opcoes[indice + 1]
 
-
 direcao = Direcao(sentido='Sul')
 motor = Motor(velocidade=80)
 
@@ -45,3 +44,4 @@ carro = Carro(motor, direcao)
 print(carro.direcao.sentido)
 carro.direcao.girar_para_direita()
 print(carro.direcao.sentido)
+
