@@ -5,7 +5,7 @@ class Carro:
 
 
 class Motor:
-    def __init__(self, velocidade):
+    def __init__(self, velocidade=0):
         self.velocidade = velocidade
 
     def acelerar(self):

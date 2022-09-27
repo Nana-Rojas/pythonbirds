@@ -1,5 +1,6 @@
 class Pessoa:
     olhos = 2
+
     def __init__(self, *filhos, nome=None, idade=25):
         self.idade = idade
         self.nome = nome
@@ -15,25 +16,40 @@ class Pessoa:
     @classmethod
     def nome_eatributo_de_classe(cls):
         return f'{cls} - olhos {cls.olhos}'
+
+
+class Homem(Pessoa):
+    pass
+
+
+class Mutante(Pessoa):
+    olhos = 3
+
+
 if __name__ == '__main__':
-    Bafudinha = Pessoa(nome='Bafudinha')
-    Nana = Pessoa(Bafudinha, nome='Nana')
-    print(Pessoa.cumprimentar(Nana))
-    print(id(Nana))
-    print(Nana.cumprimentar())
-    print(Nana.nome)
-    print(Nana.idade)
-    for filho in Nana.filhos:
+    bafudinha = Mutante(nome='bafudinha')
+    nana = Homem(bafudinha, nome='nana')
+    print(Pessoa.cumprimentar(nana))
+    print(id(nana))
+    print(nana.cumprimentar())
+    print(nana.nome)
+    print(nana.idade)
+    for filho in nana.filhos:
         print(filho.nome)
-    Nana.sobrenome = 'Bonitinha'
-    del Nana.filhos
-    Nana.olhos = 4
-    del Nana.olhos
-    print(Nana.__dict__)
-    print(Bafudinha.__dict__)
-    Pessoa.olhos = 1
+    nana.sobrenome = 'Bonitinha'
+    del nana.filhos
+    nana.olhos = 4
+    del nana.olhos
+    print(nana.__dict__)
+    print(bafudinha.__dict__)
     print(Pessoa.olhos)
-    print(Nana.olhos)
-    print(Bafudinha.olhos)
-    print(Pessoa.metodo_estatistico(), Nana.metodo_estatistico())
-    print(Pessoa.nome_eatributo_de_classe(), Bafudinha.nome_eatributo_de_classe())
+    print(nana.olhos)
+    print(bafudinha.olhos)
+    print(Pessoa.metodo_estatistico(), nana.metodo_estatistico())
+    print(Pessoa.nome_eatributo_de_classe(), bafudinha.nome_eatributo_de_classe())
+    pessoa = Pessoa('anonima')
+    print(isinstance(pessoa, Pessoa))
+    print(isinstance(pessoa, Homem))
+    print(isinstance(nana, Pessoa))
+    print(isinstance(nana, Homem))
+    print(bafudinha.olhos)
