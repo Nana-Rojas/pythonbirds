@@ -7,7 +7,7 @@ class Pessoa:
         self.filhos = list(filhos)
 
     def cumprimentar(self):
-        return f'Olá{id(self)}'
+        return f'Olá, meu nome é {self.nome}'
 
     @staticmethod
     def metodo_estatistico():
@@ -19,12 +19,16 @@ class Pessoa:
 
 
 class Homem(Pessoa):
-    pass
+    def cumprimentar(self):
+        cumprimentar_da_classe = super().cumprimentar()
+        return f'{cumprimentar_da_classe}. Beijinho na pontinha do Nariz, hihi.'
 
 
 class Mutante(Pessoa):
     olhos = 3
-
+    def cumprimentar(self):
+        cumprimentar_da_classe = super().cumprimentar()
+        return  f'{cumprimentar_da_classe}. Eu sou o amor da vovó'
 
 if __name__ == '__main__':
     bafudinha = Mutante(nome='bafudinha')
@@ -53,3 +57,5 @@ if __name__ == '__main__':
     print(isinstance(nana, Pessoa))
     print(isinstance(nana, Homem))
     print(bafudinha.olhos)
+    print(nana.cumprimentar())
+    print(bafudinha.cumprimentar())
