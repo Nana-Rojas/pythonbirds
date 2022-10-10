@@ -93,7 +93,7 @@ class Fase():
         for passaro in self._passaros:
             if not passaro.foi_lancado():
                 passaro.lancar(angulo, tempo)
-            break
+                break
 
 
     def calcular_pontos(self, tempo):
